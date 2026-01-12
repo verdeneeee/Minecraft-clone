@@ -22,12 +22,14 @@ int main()
     bool hidden = 1;
     DisableCursor();
 
-    for (int x = 0; x < worldSize; x++) {
-    for (int z = 0; z < worldSize; z++) {
-        double n = perlin.octave2D_01(x * 0.05, z * 0.05, 4);
-        worldMap[x][z] = static_cast<int>(n * 15); // Высота от 0 до 15
+    for (int x = 0; x < worldSize; x++)
+    {
+        for (int z = 0; z < worldSize; z++) 
+        {
+            double n = perlin.octave2D_01(x * 0.05, z * 0.05, 4);
+            worldMap[x][z] = static_cast<int>(n * 15); // Высота от 0 до 15
+        }
     }
-}
 
     while(!WindowShouldClose())
     {
